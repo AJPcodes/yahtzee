@@ -98,7 +98,7 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('./client/scripts/*.js')
+    return gulp.src(['./client/scripts/app.js', './client/scripts/controllers/*.js', './client/scripts/services/*.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('all.min.js'))
@@ -108,7 +108,8 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('**/js/*.js', ['lintServer', 'lintClient', 'scripts']);
+    gulp.watch(['./client/**/*.js', '!./client/scripts/dist/**','!./client/vender/**'], ['lintClient', 'scripts']);
+    gulp.watch(['**/*.js','!node_modules/**', '!client/**', '!dist/**'], ['lintServer']);
     gulp.watch('./sass/*.scss', ['sass']);
 });
 
