@@ -54,7 +54,7 @@ gulp.task('lintClient', function () {
     // So, it's best to have gulp ignore the directory as well.
     // Also, Be sure to return the stream from the task;
     // Otherwise, the task may end before the stream has finished.
-    return gulp.src(['./client/**/*.js', '!./client/scripts/dist/**','!./client/vender/**'])
+    return gulp.src('./dist/all.js')
         // eslint() attaches the lint output to the "eslint" property
         // of the file object so it can be used by other modules.
         .pipe(eslint({
@@ -69,7 +69,8 @@ gulp.task('lintClient', function () {
 
         rules: {
             'strict': 1,
-            'no-console': 1
+            'no-console': 1,
+            'angular/di': [2,"array"]
           },
         globals: {
             'jQuery':true,
@@ -108,7 +109,8 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['./client/**/*.js', '!./client/scripts/dist/**','!./client/vender/**'], ['lintClient', 'scripts']);
+    gulp.watch(['./client/**/*.js', '!./client/scripts/dist/**','!./client/vender/**'], ['scripts']);
+    gulp.watch(['./dist/all.js'], ['lintClient']);
     gulp.watch(['**/*.js','!node_modules/**', '!client/**', '!dist/**'], ['lintServer']);
     gulp.watch('./sass/*.scss', ['sass']);
 });

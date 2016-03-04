@@ -1,8 +1,55 @@
 doctype html
 html
   include ./includes/head.jade
-  body(ng-app="yahtzee")
-    div(ng-controller="MainCtrl as ctrl")
+  body(ng-app="Yahtzee")
+    div(ng-controller="YahtzeeController as ctrl")
       h1 Yahtzee
+      h2(ng-click="ctrl.rollAll()") Roll!
+
+      .container
+        #die1.dieCube(ng-click="ctrl.roll('die1')")
+          .front 1
+          .back 2
+          .right 3
+          .left 4
+          .top 5
+          .bottom 6
+
+      .container
+        #die2.dieCube(ng-click="ctrl.roll('die2')")
+          .front 1
+          .back 2
+          .right 3
+          .left 4
+          .top 5
+          .bottom 6
+
+      .container
+        #die3.dieCube(ng-click="ctrl.roll('die3')")
+          .front 1
+          .back 2
+          .right 3
+          .left 4
+          .top 5
+          .bottom 6
+
+      .container
+        #die4.dieCube(ng-click="ctrl.roll('die4')")
+          .front 1
+          .back 2
+          .right 3
+          .left 4
+          .top 5
+          .bottom 6
+
+      .container
+        #die5.dieCube(ng-click="ctrl.roll('die5')")
+          .front 1
+          .back 2
+          .right 3
+          .left 4
+          .top 5
+          .bottom 6
+
 
     include ./includes/scripts.jade
