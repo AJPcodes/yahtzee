@@ -1,9 +1,8 @@
-head
+doctype html
+html
+  include ./includes/head.jade
+  body(ng-app="yahtzee")
+    div(ng-controller="MainCtrl as ctrl")
+      h1 Yahtzee
 
-  link(rel="stylesheet", href="/css/main.css")
-
-body
-
-  h1 Yahtzee
-
-  script(src="/scripts/dist/all.min.js")
+    include ./includes/scripts.jade

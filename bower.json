@@ -1,0 +1,23 @@
+{
+  "name": "Yahtzee",
+  "description": "Yahtzee game powered by Node.js and Socket.io",
+  "main": "server.js",
+  "authors": [
+    "Allen Phelps github.com/ajpcodes (http://github.com/AJPcodes)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AJPcodes/yahtzee",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/vender",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "angular": "^1.5.0"
+  }
+}
