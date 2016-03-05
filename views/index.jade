@@ -2,54 +2,84 @@ doctype html
 html
   include ./includes/head.jade
   body(ng-app="Yahtzee")
-    div(ng-controller="YahtzeeController as ctrl")
+    div.card(ng-controller="YahtzeeController as ctrl")
       h1 Yahtzee
       h2(ng-click="ctrl.rollAll()") Roll!
 
-      .container
+      .dieContainer
         #die1.dieCube(ng-click="ctrl.roll('die1')")
-          .front 1
-          .back 6
-          .right 3
-          .left 4
-          .top 5
-          .bottom 2
+          .front
+            h4 1
+          .back
+            h4 6
+          .right
+            h4 3
+          .left
+            h4 4
+          .top
+            h4 5
+          .bottom
+            h4 2
 
-      .container
+      .dieContainer
         #die2.dieCube(ng-click="ctrl.roll('die2')")
-          .front 1
-          .back 6
-          .right 3
-          .left 4
-          .top 5
-          .bottom 2
+          .front
+            h4 1
+          .back
+            h4 6
+          .right
+            h4 3
+          .left
+            h4 4
+          .top
+            h4 5
+          .bottom
+            h4 2
 
-      .container
+      .dieContainer
         #die3.dieCube(ng-click="ctrl.roll('die3')")
-          .front 1
-          .back 6
-          .right 3
-          .left 4
-          .top 5
-          .bottom 2
+          .front
+            h4 1
+          .back
+            h4 6
+          .right
+            h4 3
+          .left
+            h4 4
+          .top
+            h4 5
+          .bottom
+            h4 2
 
-      .container
+      .dieContainer
         #die4.dieCube(ng-click="ctrl.roll('die4')")
-          .front 1
-          .back 6
-          .right 3
-          .left 4
-          .top 5
-          .bottom 2
+          .front
+            h4 1
+          .back
+            h4 6
+          .right
+            h4 3
+          .left
+            h4 4
+          .top
+            h4 5
+          .bottom
+            h4 2
 
-      .container
+      .dieContainer
         #die5.dieCube(ng-click="ctrl.roll('die5')")
-          .front 1
-          .back 6
-          .right 3
-          .left 4
-          .top 5
-          .bottom 2
+          .front
+            h4 1
+          .back
+            h4 6
+          .right
+            h4 3
+          .left
+            h4 4
+          .top
+            h4 5
+          .bottom
+            h4 2
 
 
     include ./includes/scripts.jade
