@@ -2,14 +2,37 @@
   var vm = this
   vm.title = "Yahtzee"
 
+  vm.dice = [];
+
+  var Die = function(name, value) {
+    this.name = name;
+    this.value = value;
+    this.keeper = false;
+  }
+
+  vm.dice.push(new Die('die1', 1))
+  vm.dice.push(new Die('die2', 1))
+  vm.dice.push(new Die('die3', 1))
+  vm.dice.push(new Die('die4', 1))
+  vm.dice.push(new Die('die5', 1))
+
+  $log.log(vm.dice)
+
   vm.toggleDie = function(id) {
     var die = $('#' + id)
+
+    vm.dice.forEach(function(die, index) {
+      if (die.name == id) {
+        die.keeper ? die.keeper = false: die.keeper = true;
+      }
+    })
+
     die.toggleClass('keeper')
   }
 
-  vm.roll = function(id) {
+  vm.roll = function(dieObj) {
 
-    var die = $('#' + id)
+    var die = $('#' + dieObj.name)
     var dieValue = Math.floor(Math.random() * 6) + 1
 
     //rotate between 5 and 25 times
@@ -25,8 +48,6 @@
     while (yRotate % 360 !== 0 ) {
       yRotate += 90;
     }
-
-    $log.log(dieValue)
 
     switch (dieValue) {
 
@@ -58,17 +79,20 @@
         break;
     }
 
-    die.css('transform', 'rotateX('+xRotate+'deg) rotateY('+yRotate+'deg)');
+    die.css('transform', 'rotateX('+xRotate+'deg) rotateY('+yRotate+'deg)')
+
+    dieObj.value = dieValue
 
   }
 
   vm.rollAll = function() {
 
-    vm.roll('die1')
-    vm.roll('die2')
-    vm.roll('die3')
-    vm.roll('die4')
-    vm.roll('die5')
+    vm.dice.forEach(function(die, index) {
+      if(!die.keeper) {
+       vm.roll(die)
+      }
+
+    })
 
   }
 
