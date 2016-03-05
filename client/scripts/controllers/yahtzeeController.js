@@ -2,6 +2,11 @@
   var vm = this
   vm.title = "Yahtzee"
 
+  vm.toggleDie = function(id) {
+    var die = $('#' + id)
+    die.toggleClass('keeper')
+  }
+
   vm.roll = function(id) {
 
     var die = $('#' + id)

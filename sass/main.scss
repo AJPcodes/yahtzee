@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Geostar|Candal);
 
+//GENERAL STYLES
 html {
   font-family: Candal, sans-serif;
 }
@@ -8,9 +9,31 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Geostar, sans-serif;
 }
 
+
 .dieCube:hover {
   cursor: pointer;
 }
+
+.card {
+  padding: 1em;
+}
+
+//Roll Button Style
+
+#roll {
+  cursor: pointer;
+}
+
+
+//TABLE STYLES
+
+table {
+
+  border: 2px solid black;
+
+}
+
+//3D DICE STYLES
 
 .dieCube {
 
@@ -23,67 +46,80 @@ h1, h2, h3, h4, h5, h6 {
 
   .front {
     transform:
-    translateZ(50px);
+    translateZ(25px);
   }
 
   .back {
     transform:
     rotateX(-180deg)
-    translateZ(50px);
+    translateZ(25px);
   }
 
   .right {
     transform:
     rotateY(90deg)
-    translateZ(50px);
+    translateZ(25px);
   }
 
   .left {
     transform:
     rotateY(-90deg)
-    translateZ(50px);
+    translateZ(25px);
   }
 
   .top {
     transform:
     rotateX(90deg)
-    translateZ(50px);
+    translateZ(25px);
   }
 
   .bottom {
     transform:
     rotateX(-90deg)
-    translateZ(50px);
+    translateZ(25px);
   }
 
   div {
     background: rgb(255, 255, 255);
     display: block;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 3px solid rgb(100,100,100);
     border-radius: 2px;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
     vertical-align: center;
     text-align: center;
-    padding: 30px
+    padding: 10px
   }
 
   h4 {
+    font-size: 20px;
     margin: 0;
   }
 
 }
 
+.keeper {
+
+  top: 25px;
+
+  div {
+    border-color: red;
+  }
+
+  h4 {
+    color: red;
+  }
+}
+
 .dieContainer {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   position: relative;
-  margin: 0 2em 40px;
+  margin: 0 1em 20px;
   perspective: 1000px;
   perspective-origin: 50% 100%;
 }

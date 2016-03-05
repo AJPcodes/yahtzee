@@ -3,83 +3,13 @@ html
   include ./includes/head.jade
   body(ng-app="Yahtzee")
     div.card(ng-controller="YahtzeeController as ctrl")
-      h1 Yahtzee
-      h2(ng-click="ctrl.rollAll()") Roll!
+      .container
+        h1 Yahtzee
+        h2#roll(ng-click="ctrl.rollAll()") Roll!
 
-      .dieContainer
-        #die1.dieCube(ng-click="ctrl.roll('die1')")
-          .front
-            h4 1
-          .back
-            h4 6
-          .right
-            h4 3
-          .left
-            h4 4
-          .top
-            h4 5
-          .bottom
-            h4 2
+        include ./includes/die.jade
+        include ./includes/scorecard.jade
 
-      .dieContainer
-        #die2.dieCube(ng-click="ctrl.roll('die2')")
-          .front
-            h4 1
-          .back
-            h4 6
-          .right
-            h4 3
-          .left
-            h4 4
-          .top
-            h4 5
-          .bottom
-            h4 2
-
-      .dieContainer
-        #die3.dieCube(ng-click="ctrl.roll('die3')")
-          .front
-            h4 1
-          .back
-            h4 6
-          .right
-            h4 3
-          .left
-            h4 4
-          .top
-            h4 5
-          .bottom
-            h4 2
-
-      .dieContainer
-        #die4.dieCube(ng-click="ctrl.roll('die4')")
-          .front
-            h4 1
-          .back
-            h4 6
-          .right
-            h4 3
-          .left
-            h4 4
-          .top
-            h4 5
-          .bottom
-            h4 2
-
-      .dieContainer
-        #die5.dieCube(ng-click="ctrl.roll('die5')")
-          .front
-            h4 1
-          .back
-            h4 6
-          .right
-            h4 3
-          .left
-            h4 4
-          .top
-            h4 5
-          .bottom
-            h4 2
 
 
     include ./includes/scripts.jade

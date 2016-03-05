@@ -8,6 +8,15 @@ h1, h2, h3, h4, h5, h6 {
 .dieCube:hover {
   cursor: pointer; }
 
+.card {
+  padding: 1em; }
+
+#roll {
+  cursor: pointer; }
+
+table {
+  border: 2px solid black; }
+
 .dieCube {
   width: 100%;
   height: 100%;
@@ -15,39 +24,46 @@ h1, h2, h3, h4, h5, h6 {
   transform-style: preserve-3d;
   transition: transform 1s; }
   .dieCube .front {
-    transform: translateZ(50px); }
+    transform: translateZ(25px); }
   .dieCube .back {
-    transform: rotateX(-180deg) translateZ(50px); }
+    transform: rotateX(-180deg) translateZ(25px); }
   .dieCube .right {
-    transform: rotateY(90deg) translateZ(50px); }
+    transform: rotateY(90deg) translateZ(25px); }
   .dieCube .left {
-    transform: rotateY(-90deg) translateZ(50px); }
+    transform: rotateY(-90deg) translateZ(25px); }
   .dieCube .top {
-    transform: rotateX(90deg) translateZ(50px); }
+    transform: rotateX(90deg) translateZ(25px); }
   .dieCube .bottom {
-    transform: rotateX(-90deg) translateZ(50px); }
+    transform: rotateX(-90deg) translateZ(25px); }
   .dieCube div {
     background: white;
     display: block;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 3px solid #646464;
     border-radius: 2px;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
     vertical-align: center;
     text-align: center;
-    padding: 30px; }
+    padding: 10px; }
   .dieCube h4 {
+    font-size: 20px;
     margin: 0; }
+
+.keeper {
+  top: 25px; }
+  .keeper div {
+    border-color: red; }
+  .keeper h4 {
+    color: red; }
 
 .dieContainer {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   position: relative;
-  margin: 0 2em 40px;
+  margin: 0 1em 20px;
   perspective: 1000px;
   perspective-origin: 50% 100%; }
