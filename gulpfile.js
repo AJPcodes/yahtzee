@@ -69,8 +69,10 @@ gulp.task('lintClient', function () {
 
         rules: {
             'strict': 1,
-            'no-console': 1,
-            'angular/di': [2,"array"]
+            'no-console': 0,
+            'angular/di': [2,"array"],
+            'no-unused-vars': 1,
+            'angular/controller-as-vm': 0
           },
         globals: {
             'jQuery':true,
