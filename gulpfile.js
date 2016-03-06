@@ -29,7 +29,8 @@ gulp.task('lintServer', function () {
 
         rules: {
             'strict': 1,
-            'no-console': 1
+            'no-console': 1,
+            'no-unused-vars': 1
           },
         globals: {
             'jQuery':true,

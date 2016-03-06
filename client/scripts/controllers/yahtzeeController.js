@@ -1,6 +1,11 @@
-.controller('YahtzeeController', ['$log', 'diceService', function($log, $dice) {
+.controller('YahtzeeController', ['$log', 'diceService', 'playerService', function($log, $dice, $player) {
   var vm = this
   vm.title = "Yahtzee"
+
+  vm.players = [
+    $player.newPlayer('Player1'),
+    $player.newPlayer('Player2')
+  ]
 
   vm.dice = $dice.getDice();
 
