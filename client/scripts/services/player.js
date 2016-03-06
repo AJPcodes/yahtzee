@@ -24,41 +24,40 @@
 
     this.scoreField = function(diceArray, fieldName) {
 
+      $log.log('score called')
+
       switch (fieldName) {
 
         case 'aces':
 
+          var points = 0;
+
           diceArray.forEach(function(die){
-            var points = 0;
+
             if (die.value == 1) {
               points += 1;
             }
 
           })
 
-          break;
+          this.score.aces = points
 
-        case 'ones':
-
-          diceArray.forEach(function(die){
-            var points = 0;
-            if (die.value == 1) {
-              points += 1;
-            }
-
-          })
 
           break;
 
         case 'twos':
 
+          var points = 0;
+
           diceArray.forEach(function(die){
-            var points = 0;
+
             if (die.value == 2) {
               points += 2;
             }
 
           })
+
+          this.score.twos = points
 
           break;
 

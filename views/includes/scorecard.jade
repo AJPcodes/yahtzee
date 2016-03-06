@@ -8,37 +8,44 @@
           tr
             th Number Section
             th What to Score
-            th Player Score
+            th Score
 
         tbody
           tr
             td Aces
             td Total of Aces
-            td
+            td {{player.score.aces}}
+              button.btn(ng-hide='player.score.aces' ng-click="player.scoreField(ctrl.dice, 'aces')") Use
           tr
             td Twos
             td Total of Twos
-            td
+            td {{player.score.twos}}
+              button.btn(ng-hide='player.score.twos' ng-click="player.scoreField(ctrl.dice, 'twos')") Use
           tr
             td Threes
             td Total of Threes
-            td
+            td {{player.score.threes}}
+              button.btn(ng-hide='player.score.threes' ng-click="player.scoreField(ctrl.dice, 'threes')") Use
           tr
             td Fours
             td Total of Fours
-            td
+            td {{player.score.fours}}
+              button.btn(ng-hide='player.score.fours' ng-click="player.scoreField(ctrl.dice, 'fours')") Use
           tr
             td Fives
             td Total of Fives
-            td
+            td {{player.score.fives}}
+              button.btn(ng-hide='player.score.fives' ng-click="player.scoreField(ctrl.dice, 'fives')") Use
           tr
             td Sixes
             td Total of Sixes
-            td
+            td {{player.score.sixes}}
+              button.btn(ng-hide='player.score.sixes' ng-click="player.scoreField(ctrl.dice, 'sixes')") Use
           tr
             td Bonus
             td 35 Points
-            td
+            td {{player.score.bonus}}
+
 
       table.col.s12.m6
         thead
