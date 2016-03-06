@@ -26,11 +26,12 @@
 
       $log.log('score called')
 
+      var points = 0;
       switch (fieldName) {
+
 
         case 'aces':
 
-          var points = 0;
 
           diceArray.forEach(function(die){
 
@@ -40,14 +41,16 @@
 
           })
 
+          if (points === 0) {
+            points = "Bust"
+          }
+
           this.score.aces = points
 
 
           break;
 
         case 'twos':
-
-          var points = 0;
 
           diceArray.forEach(function(die){
 
@@ -57,6 +60,10 @@
 
           })
 
+          if (points === 0) {
+            points = "Bust"
+          }
+
           this.score.twos = points
 
           break;
@@ -64,48 +71,71 @@
         case 'threes':
 
           diceArray.forEach(function(die){
-            var points = 0;
+
             if (die.value == 3) {
               points += 3;
             }
 
           })
 
+          if (points === 0) {
+            points = "Bust"
+          }
+
+          this.score.threes = points
+
           break;
 
         case 'fours':
 
           diceArray.forEach(function(die){
-            var points = 0;
+
             if (die.value == 4) {
               points += 4;
             }
 
           })
 
+          if (points === 0) {
+            points = "Bust"
+          }
+
+          this.score.fours = points
           break;
 
         case 'fives':
 
           diceArray.forEach(function(die){
-            var points = 0;
+
             if (die.value == 5) {
               points += 5;
             }
 
           })
 
+          if (points === 0) {
+            points = "Bust"
+          }
+
+          this.score.fives = points
+
           break;
 
         case 'sixes':
 
           diceArray.forEach(function(die){
-            var points = 0;
+
             if (die.value == 6) {
               points += 6;
             }
 
           })
+
+          if (points === 0) {
+            points = "Bust"
+          }
+
+          this.score.sixes = points
 
           break;
 
