@@ -1,7 +1,8 @@
 .scoreBoard(ng-hide='ctrl.gameOver')
- .card.scorecard(ng-repeat="player in ctrl.players" ng-click="ctrl.rotate()")
+ .card.scorecard(ng-repeat="player in ctrl.players")
     .row
       h2.col.s12 Scorecard {{player.name}}
+      p <span class='btn' ng-click="ctrl.rotate()"> Next </span>
 
       table.col.s12.m6
         thead

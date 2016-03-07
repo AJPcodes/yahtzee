@@ -65,6 +65,7 @@
 
     vm.rollAll()
     vm.currentPlayer = vm.players[turn % vm.players.length]
+    vm.rotate()
 
     //check if game is over
     if ($score.game(vm.players) == 'gameOver') {
