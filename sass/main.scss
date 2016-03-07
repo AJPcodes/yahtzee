@@ -24,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #roll {
   cursor: pointer;
+  padding: 0.5em;
 }
 
 
@@ -113,6 +114,9 @@ table {
   h4 {
     color: red;
   }
+}
+.allDiceContainer {
+  margin: 3em auto;
 }
 
 .dieContainer {

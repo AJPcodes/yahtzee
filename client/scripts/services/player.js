@@ -4,6 +4,8 @@
 
     this.name = name
 
+    this.final = null
+
     this.score = {
 
       aces: null,

@@ -5,11 +5,12 @@ html
     div.card(ng-controller="YahtzeeController as ctrl")
       .container
         h1 Yahtzee
-        h2 You have {{ctrl.numRolls}} rolls left!
-        h2#roll(ng-click="ctrl.rollAll()" ng-hide="ctrl.numRolls == 0") Roll!
+        .fixed
+          h2 You have {{ctrl.numRolls}} rolls left!
+          include ./includes/die.jade
+          h2#roll(ng-click="ctrl.rollAll()" ng-hide="ctrl.numRolls == 0") Roll!
 
 
-        include ./includes/die.jade
         include ./includes/scorecard.jade
 
 
