@@ -26,6 +26,7 @@
         if (bonusCheck >= 63 ) {
           player.score.bonus = 35
         }
+
         if (player.score[key] && player.score[key] !== "Bust"){
           player.final += player.score[key]
         }
