@@ -51,6 +51,16 @@
   vm.endTurn = function(){
     turn += 1
     vm.numRolls = 3
+    //ensure all dice are deselected
+    vm.dice.forEach(function(die, index) {
+      die.keeper = false;
+    })
+
+    var selectedDice = $('.dieCube')
+    selectedDice.each(function(index, selectedDie){
+      $(selectedDie).removeClass('keeper')
+    })
+
     vm.rollAll()
     vm.currentPlayer = vm.players[turn % vm.players.length]
   }
