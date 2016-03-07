@@ -73,6 +73,10 @@
     }
   }
 
+  vm.rotate = function(){
+    $('.scorecard:first-child').fadeOut(400, 'swing')
+    $('.scorecard:first-child').appendTo('.scoreBoard').hide().fadeIn(400, 'swing')
+  }
 
 }])
 

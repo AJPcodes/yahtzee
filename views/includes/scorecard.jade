@@ -1,5 +1,5 @@
-.scoreBoard(ng-repeat="player in ctrl.players")
- .card#scorecard(ng-hide="player != ctrl.currentPlayer")
+.scoreBoard(ng-hide='ctrl.gameOver')
+ .card.scorecard(ng-repeat="player in ctrl.players" ng-click="ctrl.rotate()")
     .row
       h2.col.s12 Scorecard {{player.name}}
 
@@ -15,32 +15,32 @@
             td Aces
             td Total of Aces
             td {{player.score.aces}}
-              button.btn(ng-hide='player.score.aces' ng-click="player.scoreField(ctrl.dice, 'aces'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.aces' ng-click="player.scoreField(ctrl.dice, 'aces'); ctrl.endTurn()") Use
           tr
             td Twos
             td Total of Twos
             td {{player.score.twos}}
-              button.btn(ng-hide='player.score.twos' ng-click="player.scoreField(ctrl.dice, 'twos'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.twos' ng-click="player.scoreField(ctrl.dice, 'twos'); ctrl.endTurn()") Use
           tr
             td Threes
             td Total of Threes
             td {{player.score.threes}}
-              button.btn(ng-hide='player.score.threes' ng-click="player.scoreField(ctrl.dice, 'threes'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.threes' ng-click="player.scoreField(ctrl.dice, 'threes'); ctrl.endTurn()") Use
           tr
             td Fours
             td Total of Fours
             td {{player.score.fours}}
-              button.btn(ng-hide='player.score.fours' ng-click="player.scoreField(ctrl.dice, 'fours'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.fours' ng-click="player.scoreField(ctrl.dice, 'fours'); ctrl.endTurn()") Use
           tr
             td Fives
             td Total of Fives
             td {{player.score.fives}}
-              button.btn(ng-hide='player.score.fives' ng-click="player.scoreField(ctrl.dice, 'fives'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.fives' ng-click="player.scoreField(ctrl.dice, 'fives'); ctrl.endTurn()") Use
           tr
             td Sixes
             td Total of Sixes
             td {{player.score.sixes}}
-              button.btn(ng-hide='player.score.sixes' ng-click="player.scoreField(ctrl.dice, 'sixes'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.sixes' ng-click="player.scoreField(ctrl.dice, 'sixes'); ctrl.endTurn()") Use
           tr
             td Bonus
             td 35 Points
@@ -58,37 +58,37 @@
             td Three of a Kind
             td Total of All Dice
             td {{player.score.threeOfAKind}}
-              button.btn(ng-hide='player.score.threeOfAKind' ng-click="player.scoreField(ctrl.dice, 'threeOfAKind'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.threeOfAKind' ng-click="player.scoreField(ctrl.dice, 'threeOfAKind'); ctrl.endTurn()") Use
           tr
             td Four of a Kind
             td Total of All Dice
             td {{player.score.fourOfAKind}}
-              button.btn(ng-hide='player.score.fourOfAKind' ng-click="player.scoreField(ctrl.dice, 'fourOfAKind'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.fourOfAKind' ng-click="player.scoreField(ctrl.dice, 'fourOfAKind'); ctrl.endTurn()") Use
           tr
             td Full House
             td 25 Points
             td {{player.score.fullHouse}}
-              button.btn(ng-hide='player.score.fullHouse' ng-click="player.scoreField(ctrl.dice, 'fullHouse'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.fullHouse' ng-click="player.scoreField(ctrl.dice, 'fullHouse'); ctrl.endTurn()") Use
           tr
             td Small Straight
             td 30 points
             td {{player.score.smallStraight}}
-              button.btn(ng-hide='player.score.smallStraight' ng-click="player.scoreField(ctrl.dice, 'smallStraight'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.smallStraight' ng-click="player.scoreField(ctrl.dice, 'smallStraight'); ctrl.endTurn()") Use
           tr
             td Large Straight
             td 40 Points
             td {{player.score.largeStraight}}
-              button.btn(ng-hide='player.score.largeStraight' ng-click="player.scoreField(ctrl.dice, 'largeStraight'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.largeStraight' ng-click="player.scoreField(ctrl.dice, 'largeStraight'); ctrl.endTurn()") Use
           tr
             td Yahtzee!
             td 50 Points
             td {{player.score.yahtzee}}
-              button.btn(ng-hide='player.score.yahtzee' ng-click="player.scoreField(ctrl.dice, 'yahtzee'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.yahtzee' ng-click="player.scoreField(ctrl.dice, 'yahtzee'); ctrl.endTurn()") Use
           tr
             td Chance
             td Total of All Dice
             td {{player.score.chance}}
-              button.btn(ng-hide='player.score.chance' ng-click="player.scoreField(ctrl.dice, 'chance'); ctrl.endTurn()") Use
+              button.btn(ng-hide='player !== ctrl.currentPlayer || player.score.chance' ng-click="player.scoreField(ctrl.dice, 'chance'); ctrl.endTurn()") Use
       h2.col.s12 Total: {{player.final}}
 
 

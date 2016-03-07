@@ -3,6 +3,7 @@
 //GENERAL STYLES
 html {
   font-family: Candal, sans-serif;
+  background-color: #999;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,6 +28,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5em;
 }
 
+#diceBox {
+  width: 80%;
+  margin: 2em auto;
+}
 
 //TABLE STYLES
 
@@ -128,3 +133,49 @@ table {
   perspective: 1000px;
   perspective-origin: 50% 100%;
 }
+
+//CAROSEL STYLES
+
+$total: 10;
+$n: 0;
+
+.scoreBoard {
+  position: relative;
+  top: 100px;
+}
+
+.scorecard {
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(#000, 0.2);
+  transform-origin: center;
+  transition: 0.4s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+  cursor: pointer;
+
+  @while $total >= $n {
+    &:nth-child(#{$n + 1}) {
+      z-index: #{$total - $n};
+      top: #{-$n * 15 + "px"};
+      transform-origin: top;
+      transform: scale(#{1 - $n * .1});
+      opacity: #{1 - $n * .1};
+    }
+
+    $n: $n + 1;
+  }
+
+  &:first-child {
+    &:hover {
+      box-shadow: 0 0 20px rgba(#000, 0.4);
+      transform: scale(1.01);
+      opacity: 1;
+
+    }
+  }
+
+  &:last-child {
+    opacity: .5;
+  }
+}
+

@@ -2,7 +2,7 @@ doctype html
 html
   include ./includes/head.jade
   body(ng-app="Yahtzee")
-    div.card(ng-controller="YahtzeeController as ctrl")
+    div#diceBox.card(ng-controller="YahtzeeController as ctrl")
       .container(ng-hide='ctrl.gameOver')
         h1 Yahtzee
         .fixed
@@ -11,7 +11,7 @@ html
           h2#roll(ng-click="ctrl.rollAll()" ng-hide="ctrl.numRolls == 0") Roll!
 
 
-        include ./includes/scorecard.jade
+      include ./includes/scorecard.jade
 
       .container(ng-show='ctrl.gameOver')
 
