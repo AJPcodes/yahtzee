@@ -3,7 +3,9 @@ html {
   font-family: Candal, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Geostar, sans-serif; }
+  font-family: Geostar, sans-serif;
+  font-size: 2em;
+  text-align: center; }
 
 .dieCube:hover {
   cursor: pointer; }
@@ -13,9 +15,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #roll {
   cursor: pointer; }
-
-table {
-  border: 2px solid black; }
 
 .dieCube {
   width: 100%;

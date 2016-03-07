@@ -40,7 +40,7 @@
       })
 
     }
-
+    //decrement remaining number of rolls
     vm.numRolls--
   }
 
