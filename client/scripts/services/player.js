@@ -188,9 +188,9 @@
               diceArray.forEach(function(die){
                 points += die.value
               })
-              this.score.threeOfAKind = points
             }
           }.bind(this))
+          this.score.threeOfAKind = points
 
           break;
 
@@ -203,9 +203,9 @@
               diceArray.forEach(function(die){
                 points += die.value
               })
-              this.score.fourOfAKind = points
             }
           }.bind(this))
+          this.score.fourOfAKind = points
 
           break;
 

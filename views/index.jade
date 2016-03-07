@@ -3,7 +3,7 @@ html
   include ./includes/head.jade
   body(ng-app="Yahtzee")
     div.card(ng-controller="YahtzeeController as ctrl")
-      .container
+      .container(ng-hide='ctrl.gameOver')
         h1 Yahtzee
         .fixed
           h2 You have {{ctrl.numRolls}} rolls left!
@@ -13,6 +13,9 @@ html
 
         include ./includes/scorecard.jade
 
+      .container(ng-show='ctrl.gameOver')
+
+        include ./includes/results.jade
 
 
     include ./includes/scripts.jade

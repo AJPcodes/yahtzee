@@ -1,5 +1,7 @@
-.controller('YahtzeeController', ['$log', 'diceService', 'playerService', function($log, $dice, $player) {
+.controller('YahtzeeController', ['$log', 'diceService', 'playerService', 'scoreService', function($log, $dice, $player, $score) {
   var vm = this
+
+  vm.gameOver = false
 
   vm.numRolls = 3;
   var turn = 0;
@@ -63,6 +65,12 @@
 
     vm.rollAll()
     vm.currentPlayer = vm.players[turn % vm.players.length]
+
+    //check if game is over
+    if ($score.game(vm.players) == 'gameOver') {
+
+      vm.gameOver = true
+    }
   }
 
 
